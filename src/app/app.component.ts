@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-
+import {environment} from '../environments/environment';
+environment
 @Component({
   selector: 'app-root',
   imports: [RouterOutlet],
@@ -8,5 +9,6 @@ import { RouterOutlet } from '@angular/router';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'portfolio-frontend';
+  title = 'portfolio';
+  apiUrl: string = environment.apiUrl;
 }
