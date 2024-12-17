@@ -1,6 +1,5 @@
 FROM node:22-alpine AS build
 WORKDIR /dist/src/app
-RUN npm cache clean --force
 COPY package*.json ./
 RUN npm install
 COPY . .
