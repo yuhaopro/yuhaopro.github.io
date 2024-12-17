@@ -3,8 +3,8 @@ WORKDIR /dist/src/app
 RUN npm cache clean --force
 COPY package*.json ./
 RUN npm install
-RUN npx ngcc --properties es2023 browser module main --first-only --create-ivy-entry-points
 COPY . .
+RUN chown -R app /app
 RUN npm run build
 ### STAGE 2:RUN ###
 # Defining nginx image to be used
