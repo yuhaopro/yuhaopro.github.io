@@ -1,10 +1,9 @@
-FROM node:20.9-alpine AS build
+FROM node:18.19.1-alpine AS build
 WORKDIR /dist/src/app
 RUN npm cache clean --force
 COPY package*.json ./
-RUN npm install
+RUN npm install --force
 COPY . .
-RUN chown -R app /app
 RUN npm run build
 ### STAGE 2:RUN ###
 # Defining nginx image to be used
